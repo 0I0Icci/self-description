@@ -1922,11 +1922,25 @@ p {
     display: none;
     min-height: auto;
     padding-top: 96px;
-    padding-bottom: 86px;
+    padding-bottom: 28px;
+    align-content: start;
+    gap: 14px;
   }
 
   .page.active {
     display: grid;
+  }
+
+  .page > .page-prev,
+  .page > .page-next {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .page > .page-prev {
+    margin-top: 6px;
   }
 
   .page-grid,
@@ -2134,19 +2148,13 @@ p {
     min-width: 560px;
   }
 
-  .page-next,
-  .page-prev,
   .contact-actions,
   .btn {
     width: calc(100% - 28px);
   }
 
-  .page-next {
-    right: 14px;
-  }
-
-  .page-prev {
-    left: 14px;
-    bottom: 92px;
+  .page > .page-prev,
+  .page > .page-next {
+    width: 100%;
   }
 }
