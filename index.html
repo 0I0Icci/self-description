@@ -3,238 +3,552 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>李佳浩 | 产品经理 / AI产品方向作品集</title>
-  <meta name="description" content="李佳浩的个人简历网站与产品经理作品集，展示项目经历、产品能力、作品链接和联系方式。">
+  <title>个人简历 / 作品集网站</title>
+  <meta name="description" content="以一颗种子的成长为线索搭建的个人简历与作品集网站框架。">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- 顶部导航：修改导航文字时，请同步检查下方 section 的 id -->
+<body data-theme="seed">
+  <!-- 顶部导航：每个导航对应一个全屏页面面板 -->
   <header class="site-header">
     <nav class="navbar" aria-label="主导航">
-      <a class="brand" href="#hero" aria-label="返回首页">李佳浩</a>
+      <a class="brand" href="#hero" data-page-link="0">Seed Portfolio</a>
       <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <div class="nav-links">
-        <a href="#about">关于我</a>
-        <a href="#projects">项目经历</a>
-        <a href="#portfolio">作品集</a>
-        <a href="#skills">技能工具</a>
-        <a href="#contact">联系我</a>
+        <a href="#sprout" data-page-link="1">萌芽</a>
+        <a href="#roots" data-page-link="2">扎根</a>
+        <a href="#branches" data-page-link="3">抽枝</a>
+        <a href="#leaves" data-page-link="4">长叶</a>
+        <a href="#projects" data-page-link="5">项目案例</a>
+        <a href="#contact" data-page-link="6">联系我</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <!-- 首屏 Hero：替换姓名、求职方向和按钮链接 -->
-    <section id="hero" class="hero section">
-      <div class="hero-content">
-        <p class="eyebrow">Product Manager Portfolio</p>
-        <h1>李佳浩</h1>
-        <p class="hero-subtitle">产品经理 / AI产品方向求职者</p>
-        <p class="hero-summary">
-          关注 AI 产品、情绪成长与社区产品方向，能够从用户需求出发，完成调研、分析、方案设计与前端原型验证。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">查看项目</a>
-          <a class="btn btn-secondary" href="#">下载简历</a>
+  <!-- 全局浇水转场动画：所有页面跳转复用这一层 -->
+  <div class="transition-water" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <main class="page-shell">
+    <!-- Hero：土壤里的种子透视图 -->
+    <section id="hero" class="page hero-page active" data-theme="seed" data-page="0">
+      <div class="hero-center">
+        <div class="soil-seed-scene" aria-hidden="true">
+          <div class="soil-surface"></div>
+          <div class="soil-window">
+            <span class="soil-layer layer-one"></span>
+            <span class="soil-layer layer-two"></span>
+            <span class="soil-stone stone-one"></span>
+            <span class="soil-stone stone-two"></span>
+            <span class="soil-stone stone-three"></span>
+            <div class="underground-seed">
+              <span class="seed-highlight"></span>
+              <span class="seed-root"></span>
+            </div>
+          </div>
+        </div>
+        <button class="meet-button water-next" type="button" data-next="1">认识我</button>
+      </div>
+    </section>
+
+    <!-- 成长阶段：每个 section 都是一个独立页面，可替换文案、图片与标签 -->
+    <section id="sprout" class="page stage-page sprout-story-page" data-theme="sprout" data-page="1">
+      <div class="sprout-layout">
+        <div class="sprout-rise-visual" aria-hidden="true">
+          <span class="sprout-ground"></span>
+          <span class="sprout-seed"></span>
+          <span class="sprout-stem"></span>
+          <span class="sprout-leaf sprout-left"></span>
+          <span class="sprout-leaf sprout-right"></span>
+        </div>
+        <article class="stage-copy sprout-heading">
+          <p class="stage-kicker">Stage 01</p>
+          <h1 class="no-wrap-title">萌芽｜需求洞察</h1>
+          <p>通过一个偶然的契机，我了解到MBTI<br>随着认识的深入，我创建了一个MBTI相关微博投稿账号</p>
+          <div class="tag-row">
+            <span>市场分析</span>
+            <span>内容筛选</span>
+            <span>用户理解</span>
+          </div>
+        </article>
+        <div class="insight-card-grid">
+          <article class="insight-card">
+            <button class="screenshot-button" type="button" data-full-image="assets/submission-guide.jpg" data-image-alt="投稿指南截图">
+              <img src="assets/submission-guide.jpg" alt="投稿指南截图">
+            </button>
+            <p>随着投稿量增加，每天有20+条私信，其中有重复问题。于是我整理了一份清晰的投稿指南并置顶，将常见问题标准化。之后重复提问减少了60%，我可以把时间花在筛选优质内容上。这让我意识到：规则和流程设计，是规模化的前提。</p>
+          </article>
+          <article class="insight-card">
+            <button class="screenshot-button" type="button" data-full-image="assets/friendship-post.jpg" data-image-alt="交友楼截图">
+              <img src="assets/friendship-post.jpg" alt="交友楼截图">
+            </button>
+            <p>运营一段时间后，我发现有很多群聊宣传，针对特定类型人格的交友投稿。于是我主动创建了一个固定的“交友楼”帖子，让大家在评论区按格式留言。结果这条内容阅读量超过20万，评论区成了一个小型社交场。这让我学会：用户没说出来的需求，才是产品机会。</p>
+          </article>
         </div>
       </div>
-      <aside class="hero-panel" aria-label="个人关键词">
+      <button class="page-prev water-next" type="button" data-next="0" aria-label="返回上一页">↑</button>
+      <button class="page-next water-next" type="button" data-next="2" aria-label="进入下一页">↓</button>
+    </section>
+
+    <section id="roots" class="page stage-page roots-story-page" data-theme="roots" data-page="2">
+      <div class="roots-layout">
+        <div class="root-growth-visual" aria-hidden="true">
+          <span class="root-ground"></span>
+          <span class="root-seed"></span>
+          <span class="root-stem"></span>
+          <span class="root-leaf root-left"></span>
+          <span class="root-leaf root-right"></span>
+          <span class="root-thread root-thread-a"></span>
+          <span class="root-thread root-thread-b"></span>
+          <span class="root-thread root-thread-c"></span>
+        </div>
+        <article class="stage-copy roots-heading">
+          <p class="stage-kicker">Stage 02</p>
+          <h1 class="no-wrap-title">扎根｜沟通协作</h1>
+          <p>大一时，我加入了学校的大学生科学技术协会<br>在协助筹办赛事的过程中，我学会如何把复杂的事情变得有序。</p>
+          <div class="tag-row">
+            <span>踏实执行</span>
+            <span>细节把控</span>
+            <span>沟通协调</span>
+          </div>
+        </article>
+        <div class="roots-workspace">
+          <div class="process-card" aria-label="解决突发问题流程图">
+            <div class="process-row process-main">
+              <span>发现<br>问题</span>
+              <span>分析<br>影响</span>
+              <span>协调<br>方案</span>
+              <span>执行<br>沟通</span>
+              <span>结果<br>闭环</span>
+            </div>
+            <div class="process-row process-arrows" aria-hidden="true">
+              <span>↓</span>
+              <span>↓</span>
+              <span>↓</span>
+              <span>↓</span>
+              <span>↓</span>
+            </div>
+            <div class="process-row process-detail">
+              <span>时间冲突</span>
+              <span>涉及20+队</span>
+              <span>重新排期</span>
+              <span>逐一通知</span>
+              <span>零投诉</span>
+            </div>
+            <p class="process-note">以上为我在30分钟内协调20+团队，重新安排答辩顺序，确保赛事顺利进行的流程图。</p>
+          </div>
+          <aside class="roots-photo-rail" aria-label="实践照片">
+            <figure class="side-photo-item">
+              <button class="side-photo-button" type="button" data-full-image="assets/association-badge.jpg" data-image-alt="科协工作证照片">
+                <img src="assets/association-badge.jpg" alt="科协工作证照片">
+              </button>
+              <figcaption>我的工作证</figcaption>
+            </figure>
+            <figure class="side-photo-item">
+              <button class="side-photo-button" type="button" data-full-image="assets/event-files.jpg" data-image-alt="赛事筹办文件截图">
+                <img src="assets/event-files.jpg" alt="赛事筹办文件截图">
+              </button>
+              <figcaption>工作中的文件</figcaption>
+            </figure>
+            <article class="expand-story-card">
+              <button class="expand-story-toggle" type="button" aria-expanded="false">
+                <span>凌晨两点的文件核对</span>
+                <span class="expand-icon" aria-hidden="true">⌄</span>
+              </button>
+              <div class="expand-story-body">
+                <p>晚上十点，下课铃响，我们几个人拖着疲惫的身体走进办公室。挑战杯省赛在即，202份团队资料需要连夜整理。</p>
+                <p>每个人认领一个赛道，分工检查、分类、汇总。我负责的是科技发明A类十几个团队，每个团队交上来的文件夹里装着报名表、作品说明书、PPT、承诺书……我们要逐份确认格式正确、内容完整。</p>
+                <p>两个小时后，各赛道陆续完成。大家松了一口气，准备收工。</p>
+                <p>“等一下，总数对不上。”</p>
+                <p>有人喊了一声。空气突然安静了。</p>
+                <p>我们重新加了一遍：A赛道多少份，B赛道多少份，C赛道多少份……数字反复算了好几遍，还是对不上。问题出在哪里？不知道。但所有人都知道，如果今晚不解决，明天交给其他部门的工作就会全部乱套。</p>
+                <p>于是大家重新打开文件夹，一份一份核对。有人负责报数，有人负责记录，有人负责排查重复和遗漏。凌晨两点，终于找到了问题——某个赛道的文件被误放到了另一个赛道的文件夹里。</p>
+                <p>这件事让我懂得两点：协作的真相其实是“一荣俱荣，一损俱损”。一个人的失误，会让整个团队背负成倍的工作量。这不是指责，而是提醒——认真对待自己的那一环，是对队友最大的尊重。</p>
+                <p>责任不是“想不想承担”，而是“不得不承担”。当一项任务关系到几百人的活动能否顺利落地时，疲惫、委屈、抱怨都不再有意义。你能做的，就是扛住，然后把它做完。</p>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </div>
+      <button class="page-prev water-next" type="button" data-next="1" aria-label="返回上一页">↑</button>
+      <button class="page-next water-next" type="button" data-next="3" aria-label="进入下一页">↓</button>
+    </section>
+
+    <section id="branches" class="page stage-page branches-story-page" data-theme="branches" data-page="3">
+      <div class="page-grid branches-layout">
+        <div class="plant-visual plant-branches branch-grow-visual" aria-hidden="true">
+          <span class="ground"></span>
+          <span class="stem branch-stem"></span>
+          <span class="branch branch-left"></span>
+          <span class="branch branch-right"></span>
+          <span class="leaf left"></span>
+          <span class="leaf right"></span>
+        </div>
+        <article class="stage-copy branches-heading">
+          <p class="stage-kicker">Stage 03</p>
+          <h1 class="no-wrap-title">抽枝｜归因分析</h1>
+          <p>大一暑假，我主动进入了课题组<br>从洗烧杯到独立负责课题，在实验室的两年我学会严谨和坚持。</p>
+          <div class="tag-row">
+            <span>探究本质</span>
+            <span>数据驱动</span>
+            <span>项目管理</span>
+          </div>
+        </article>
+        <div class="branch-gallery branch-placeholder">
+          <article class="branch-media-card">
+            <button class="screenshot-button" type="button" data-full-image="assets/centrifuge-before-after.jpg" data-image-alt="第一次合成材料离心前后">
+              <img src="assets/centrifuge-before-after.jpg" alt="第一次合成材料离心前后">
+            </button>
+            <p class="branch-media-caption">第一次合成材料离心前后</p>
+            <article class="expand-story-card">
+              <button class="expand-story-toggle" type="button" aria-expanded="false">
+                <span>卡在第一步</span>
+                <span class="expand-icon" aria-hidden="true">⌄</span>
+              </button>
+              <div class="expand-story-body">
+                <p>做磁性材料的第一天，我就卡住了。材料合成出来后，离心机怎么都离不下来。师姐帮我分析了两种可能：一是颗粒太小，转速不够；二是根本没合成出来。</p>
+                <p>我按照第一个方向，把样品分批次放进更高速的离心机。但试了几次还是不行。直到第二次合成时，我才发现——样品其实粘在了反应釜内壁上，根本没被倒进离心管。</p>
+                <p>卡住的时候，先检查最简单的地方。很多时候答案不在复杂理论里，而在被忽略的细节。</p>
+              </div>
+            </article>
+          </article>
+          <article class="branch-media-card">
+            <button class="screenshot-button" type="button" data-full-image="assets/magnet-comparison.jpg" data-image-alt="材料有磁性后被磁铁吸附前后对比">
+              <img src="assets/magnet-comparison.jpg" alt="材料有磁性后被磁铁吸附前后对比">
+            </button>
+            <p class="branch-media-caption">材料有磁性后被磁铁吸附前后对比</p>
+            <article class="expand-story-card">
+              <button class="expand-story-toggle" type="button" aria-expanded="false">
+                <span>没有磁性</span>
+                <span class="expand-icon" aria-hidden="true">⌄</span>
+              </button>
+              <div class="expand-story-body">
+                <p>材料终于离心出来了，但没有磁性。而且粒径大得离谱，是微米级，不是我要的纳米级。</p>
+                <p>师姐、师兄们给了我四五种建议：超声剥离、调整浓度、掺杂离子、重新读文献找原理。我花了几个月，把所有能试的方法都试了一遍。每种方法都要等一周以上，我一下课就往实验室跑。</p>
+                <p>我先选择了成本最低、最容易实施的超声剥离，48小时没有效果就果断放弃。然后我按照这个逻辑一条一条往下试。</p>
+                <p>后面发现最难的不是时间，而是文献根本没讲清楚磁性从哪儿来，我最后成功的浓度条件文献里从来没有出现过，而我当时根本不知道能不能成，只是觉得也许这里会有答案。</p>
+                <p>我也有无数个想放弃的时刻，但我告诉自己每重复两次，就能区分出是方法不行’还是执行有问题。前者帮我换路，后者让我优化，办法总比困难多。</p>
+              </div>
+            </article>
+          </article>
+        </div>
+      </div>
+      <button class="page-prev water-next" type="button" data-next="2" aria-label="返回上一页">↑</button>
+      <button class="page-next water-next" type="button" data-next="4" aria-label="进入下一页">↓</button>
+    </section>
+
+    <section id="leaves" class="page stage-page leaves-story-page" data-theme="leaves" data-page="4">
+      <div class="page-grid leaves-layout">
+        <div class="plant-visual plant-leaves leaves-grow-visual" aria-hidden="true">
+          <span class="ground"></span>
+          <span class="stem leaves-stem"></span>
+          <span class="branch branch-left"></span>
+          <span class="branch branch-right"></span>
+          <span class="leaf left"></span>
+          <span class="leaf right"></span>
+          <span class="leaf top-left"></span>
+          <span class="leaf top-right"></span>
+          <span class="leaf upper-left"></span>
+          <span class="leaf upper-right"></span>
+        </div>
+        <article class="stage-copy leaves-heading">
+          <p class="stage-kicker">Stage 04</p>
+          <h1 class="no-wrap-title">长叶｜走向应用</h1>
+          <p>大四下学期，我从零开始自学vibe coding和产品设计，做了一个关于情绪成长的AI网站。</p>
+          <div class="tag-row">
+            <span>快速学习</span>
+            <span>用户洞察</span>
+            <span>边界判断</span>
+          </div>
+        </article>
+        <div class="leaves-case-layout">
+          <div class="leaves-case-main">
+            <button class="screenshot-button leaves-survey-shot" type="button" data-full-image="assets/survey-stats.png" data-image-alt="部分问卷数据统计">
+              <img src="assets/survey-stats.png" alt="部分问卷数据统计">
+            </button>
+            <p class="branch-media-caption">部分问卷数据统计</p>
+            <div class="leaves-story-text">
+              <p>我在做这个项目之前完全没接触过网站开发和 vibe coding，于是我从零开始，一周内自学并搭出了可交互的 Demo。在 10 天里回收了 95 份问卷，验证核心假设。</p>
+            </div>
+          </div>
+          <div class="leaves-case-side">
+            <div class="demo-home-mock" aria-label="网站demo首页">
+              <div class="demo-home-brand">
+                <span class="demo-home-icon">E</span>
+                <div>
+                  <strong>EchoMind</strong>
+                  <p>AI EMOTION GROWTH COACH</p>
+                </div>
+              </div>
+              <div class="demo-home-panel">
+                <p>是什么让你现在有点卡住？</p>
+                <p>或者，聊聊最近发生的事</p>
+                <span>开始了解自己</span>
+              </div>
+            </div>
+            <p class="branch-media-caption">网站demo首页</p>
+          </div>
+        </div>
+      </div>
+      <button class="page-prev water-next" type="button" data-next="3" aria-label="返回上一页">↑</button>
+      <button class="page-next water-next" type="button" data-next="5" aria-label="进入下一页">↓</button>
+    </section>
+
+    <section id="projects" class="page content-page project-case-page" data-theme="projects" data-page="5">
+      <div class="content-wrap project-case-wrap">
+        <div class="section-heading project-page-heading">
+          <p class="stage-kicker">Project Case</p>
+          <h1>AI情绪成长教练</h1>
+          <p class="project-name-mark">EchoMind</p>
+          <p>当前页面中的图片、链接与封面素材均为占位内容，后续可替换为真实项目截图、PRD 封面和网站地址。</p>
+        </div>
+
+        <!-- 页内导航：点击后在当前项目页内滚动到对应区块 -->
+        <nav class="project-subnav" aria-label="项目页内导航">
+          <a href="#project-cover" data-project-anchor="project-cover">封面</a>
+          <a href="#project-overview" data-project-anchor="project-overview">概览</a>
+          <a href="#project-why" data-project-anchor="project-why">为什么做</a>
+          <a href="#project-insights" data-project-anchor="project-insights">用户洞察</a>
+          <a href="#project-competitors" data-project-anchor="project-competitors">竞品分析</a>
+          <a href="#project-positioning" data-project-anchor="project-positioning">产品定位</a>
+          <a href="#project-solution" data-project-anchor="project-solution">核心方案</a>
+          <a href="#project-flow" data-project-anchor="project-flow">核心流程</a>
+          <a href="#project-showcase" data-project-anchor="project-showcase">页面展示</a>
+          <a href="#project-learnings" data-project-anchor="project-learnings">项目收获</a>
+          <a href="#project-links" data-project-anchor="project-links">查看更多</a>
+        </nav>
+
+        <!-- 项目封面 -->
+        <section id="project-cover" class="project-section project-hero-block">
+          <div class="project-hero-copy">
+            <p class="section-kicker">项目封面</p>
+            <h2>AI情绪成长教练</h2>
+            <p class="project-name-mark">EchoMind</p>
+            <p class="project-one-liner">人格理解 × 沟通风格适配 × AI对话 × 成长记录</p>
+            <div class="tag-row project-tag-row">
+              <span>用户调研</span>
+              <span>竞品分析</span>
+              <span>产品方案</span>
+              <span>网页原型</span>
+              <span>AI产品</span>
+            </div>
+            <div class="project-cta-row">
+              <a class="btn btn-primary" href="https://0i0icci.github.io/coach/" target="_blank" rel="noreferrer">查看网站</a>
+              <a class="btn btn-secondary" href="assets/downloads/EchoMind.docx" download>查看PRD</a>
+            </div>
+          </div>
+          <div class="project-cover-placeholder" aria-hidden="true">
+            <img src="assets/project-cover-placeholder.png" alt="AI情绪成长教练项目封面图">
+          </div>
+        </section>
+
+        <!-- 项目概览 -->
+        <section id="project-overview" class="project-section">
+          <p class="section-kicker">项目概览</p>
+          <div class="project-overview-grid">
+            <article class="project-info-card">
+              <h2>项目简介</h2>
+              <p>一个尝试让 AI 更有针对性地理解和回应用户的情绪成长产品。</p>
+            </article>
+            <article class="project-info-card">
+              <h2>我的角色</h2>
+              <p>用户调研｜竞品分析｜需求分析｜产品方案｜原型设计</p>
+            </article>
+            <article class="project-info-card">
+              <h2>时间</h2>
+              <p>2026.04</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 为什么做 -->
+        <section id="project-why" class="project-section narrative-block">
+          <p class="section-kicker">为什么做</p>
+          <h2>为什么做这个项目？</h2>
+          <p>很多用户缺的不是一个“能聊天的 AI”，而是一个更懂自己、回应更合适的支持系统。</p>
+          <p>我想尝试把人格理解、沟通偏好与 AI 对话结合起来，设计一个更具针对性的情绪成长产品。</p>
+        </section>
+
+        <!-- 用户洞察 -->
+        <section id="project-insights" class="project-section">
+          <p class="section-kicker">用户洞察</p>
+          <div class="project-card-grid insight-grid">
+            <article class="project-detail-card">
+              <h3>洞察 01</h3>
+              <p>情绪困扰常与压力、拖延、迷茫、人际关系问题交织出现。</p>
+            </article>
+            <article class="project-detail-card">
+              <h3>洞察 02</h3>
+              <p>用户想倾诉，但现实中缺少稳定、低负担的支持对象。</p>
+            </article>
+            <article class="project-detail-card">
+              <h3>洞察 03</h3>
+              <p>现有产品常见问题：模板化、缺少针对性、缺少成长记录。</p>
+            </article>
+            <article class="project-detail-card">
+              <h3>洞察 04</h3>
+              <p>用户愿意尝试 AI，但前提是 AI 要更懂自己。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 竞品分析 -->
+        <section id="project-competitors" class="project-section narrative-block">
+          <p class="section-kicker">竞品分析</p>
+          <h2>竞品分析</h2>
+          <p>现有情绪产品大多集中在记录、表达、陪伴或自助观察。</p>
+          <p>而“针对性回应”与“长期成长陪伴”仍有明显空白。</p>
+        </section>
+
+        <!-- 产品定位 -->
+        <section id="project-positioning" class="project-section">
+          <p class="section-kicker">产品定位</p>
+          <div class="positioning-card">
+            <h2>产品定位</h2>
+            <p class="positioning-line">一款通过人格理解与沟通风格识别，为用户提供更具针对性的 AI 情绪成长支持的产品。</p>
+            <div class="positioning-value">
+              <span>核心价值</span>
+              <strong>先理解用户，再回应用户，最后记录成长。</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- 核心方案 -->
+        <section id="project-solution" class="project-section">
+          <p class="section-kicker">核心方案</p>
+          <div class="project-card-grid solution-grid">
+            <article class="project-detail-card">
+              <h3>人格理解</h3>
+              <p>建立基础用户画像。</p>
+            </article>
+            <article class="project-detail-card">
+              <h3>沟通风格测试</h3>
+              <p>识别用户希望被怎样回应。</p>
+            </article>
+            <article class="project-detail-card">
+              <h3>AI教练对话</h3>
+              <p>根据个体差异动态调整交流方式。</p>
+            </article>
+            <article class="project-detail-card">
+              <h3>成长记录</h3>
+              <p>沉淀情绪与成长变化。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 核心流程 -->
+        <section id="project-flow" class="project-section">
+          <p class="section-kicker">核心流程</p>
+          <div class="project-flow-line" aria-label="项目核心流程">
+            <div class="flow-step"><span>01</span><strong>开始了解自己</strong></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span>02</span><strong>选择人格类型</strong></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span>03</span><strong>完成沟通风格测试</strong></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span>04</span><strong>获得测试结果</strong></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span>05</span><strong>进入 AI 对话</strong></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span>06</span><strong>沉淀成长记录</strong></div>
+          </div>
+        </section>
+
+        <!-- 页面展示：图片均为占位图，后续替换真实截图 -->
+        <section id="project-showcase" class="project-section">
+          <p class="section-kicker">页面展示</p>
+          <div class="project-showcase-grid">
+            <article class="showcase-card">
+              <img class="showcase-image" src="assets/showcase/showcase-1.jpg" alt="EchoMind 首页">
+              <h3>首页</h3>
+              <p>极简单入口，降低开口压力。</p>
+            </article>
+            <article class="showcase-card">
+              <img class="showcase-image" src="assets/showcase/showcase-2.jpg" alt="EchoMind 路径选择页">
+              <h3>路径选择页</h3>
+              <p>区分已知 / 未知人格类型用户。</p>
+            </article>
+            <article class="showcase-card">
+              <img class="showcase-image" src="assets/showcase/showcase-3.jpg" alt="EchoMind MBTI 选择页">
+              <h3>MBTI选择页</h3>
+              <p>快速建立基础画像。</p>
+            </article>
+            <article class="showcase-card">
+              <img class="showcase-image" src="assets/showcase/showcase-4.jpg" alt="EchoMind 沟通风格测试页">
+              <h3>沟通风格测试页</h3>
+              <p>识别用户偏好的回应方式。</p>
+            </article>
+            <article class="showcase-card">
+              <img class="showcase-image" src="assets/showcase/showcase-5.jpg" alt="EchoMind 测试结果页">
+              <h3>测试结果页</h3>
+              <p>让用户先感受到“被理解”。</p>
+            </article>
+            <article class="showcase-card">
+              <img class="showcase-image" src="assets/showcase/showcase-6.jpg" alt="EchoMind AI 对话页">
+              <h3>AI对话页</h3>
+              <p>进入更有针对性的教练式交流。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 项目收获 -->
+        <section id="project-learnings" class="project-section">
+          <p class="section-kicker">项目收获</p>
+          <div class="project-takeaways">
+            <article class="takeaway-item"><span>01</span><p>完成用户调研与需求提炼</p></article>
+            <article class="takeaway-item"><span>02</span><p>完成竞品分析与产品定位</p></article>
+            <article class="takeaway-item"><span>03</span><p>完成信息架构与原型设计</p></article>
+            <article class="takeaway-item"><span>04</span><p>尝试用 AI 辅助实现网页原型</p></article>
+          </div>
+        </section>
+
+        <!-- 项目入口 -->
+        <section id="project-links" class="project-section project-links-section">
+          <p class="section-kicker">项目入口</p>
+          <h2>查看更多</h2>
+          <div class="project-link-actions">
+            <a class="btn btn-primary" href="#">访问项目网站</a>
+            <a class="btn btn-secondary" href="assets/downloads/EchoMind.docx" download>查看PRD文档</a>
+            <a class="btn btn-secondary" href="#">返回个人主页</a>
+          </div>
+        </section>
+      </div>
+      <button class="page-prev water-next" type="button" data-next="4" aria-label="返回上一页">↑</button>
+      <button class="page-next water-next" type="button" data-next="6" aria-label="进入下一页">↓</button>
+    </section>
+
+    <section id="contact" class="page content-page" data-theme="contact" data-page="6">
+      <div class="contact-panel">
         <div>
-          <span class="panel-label">方向</span>
-          <strong>AI 产品 / 产品经理</strong>
+          <p class="stage-kicker">Contact</p>
+          <h1>联系我</h1>
         </div>
-        <div>
-          <span class="panel-label">能力</span>
-          <strong>调研 · 分析 · 原型</strong>
-        </div>
-        <div>
-          <span class="panel-label">状态</span>
-          <strong>开放求职机会</strong>
-        </div>
-      </aside>
-    </section>
-
-    <!-- 关于我：专业背景占位可替换为学校、专业、经历等信息 -->
-    <section id="about" class="section section-soft">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>关于我</h2>
-        <p>以产品经理岗位匹配度为核心，展示我对用户、内容和 AI 产品方向的理解。</p>
-      </div>
-      <div class="about-grid">
-        <article class="about-card">
-          <h3>专业背景</h3>
-          <p>这里可以补充你的学校、专业、实习经历或课程背景，用 2-3 句话说明与产品经理方向的关联。</p>
-        </article>
-        <article class="about-card">
-          <h3>产品兴趣</h3>
-          <p>我对产品经理方向保持持续兴趣，尤其关注 AI 产品如何理解用户状态、适配沟通方式，并提供更有帮助的成长陪伴。</p>
-        </article>
-        <article class="about-card about-card-wide">
-          <h3>我的优势</h3>
-          <ul class="check-list">
-            <li>有内容账号运营经验，对用户需求和内容传播有一定理解</li>
-            <li>对 AI 产品、情绪成长、社区产品方向有持续兴趣</li>
-            <li>能独立完成用户调研、竞品分析、产品方案和原型设计</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- 项目经历：本模块是作品集核心，可继续复制 project-card 添加新项目 -->
-    <section id="projects" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Projects</p>
-        <h2>项目经历</h2>
-        <p>围绕问题洞察、产品设计、方案表达和原型落地，展示我的产品思考与执行能力。</p>
-      </div>
-      <div class="project-list">
-        <article class="project-card">
-          <div class="project-header">
-            <div>
-              <h3>AI情绪成长教练网站</h3>
-              <p class="project-time">2026年4月</p>
-            </div>
-            <span class="project-tag">AI产品</span>
-          </div>
-          <p class="project-desc">围绕“人格理解 + 沟通风格适配 + AI对话 + 成长记录”设计的个人项目。</p>
-          <div class="project-detail-grid">
-            <div>
-              <h4>我做了什么</h4>
-              <ul>
-                <li>独立完成用户问卷设计、用户需求分析、竞品分析、产品方案设计</li>
-                <li>设计“MBTI选择—沟通风格测试—结果反馈—AI对话入口”的核心链路</li>
-                <li>使用 HTML/CSS/JS 在 AI 辅助下完成前端原型开发</li>
-              </ul>
-            </div>
-            <div>
-              <h4>项目亮点</h4>
-              <ul>
-                <li>通过问卷提炼出“模板化回复、建议缺少针对性、缺少成长记录”等痛点</li>
-                <li>将产品定位为“AI情绪成长教练”而非普通情绪记录工具</li>
-              </ul>
-            </div>
-          </div>
-          <a class="text-link" href="#">查看详情</a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-header">
-            <div>
-              <h3>产品/市场分析项目</h3>
-              <p class="project-time">2026年4月</p>
-            </div>
-            <span class="project-tag">市场分析</span>
-          </div>
-          <p class="project-desc">围绕目标产品进行内容拆解、竞品分析或市场研究的项目。</p>
-          <div class="project-detail-grid">
-            <div>
-              <h4>我做了什么</h4>
-              <ul>
-                <li>完成产品结构分析、功能拆解、用户路径梳理</li>
-                <li>输出分析文档和总结</li>
-              </ul>
-            </div>
-            <div>
-              <h4>项目亮点</h4>
-              <ul>
-                <li>展示我的分析能力、信息整合能力与产品表达能力</li>
-              </ul>
-            </div>
-          </div>
-          <a class="text-link" href="#">查看详情</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- 作品集链接：将 href="#" 替换为真实链接或附件地址 -->
-    <section id="portfolio" class="section section-soft">
-      <div class="section-heading">
-        <p class="eyebrow">Portfolio</p>
-        <h2>作品集 / 项目链接</h2>
-        <p>集中放置项目网页、原型、报告、文档与简历，方便招聘方快速访问。</p>
-      </div>
-      <div class="link-grid">
-        <a class="link-card" href="https://0i0icci.github.io/coach/" target="_blank" rel="noopener">
-          <span>项目网页链接</span>
-          <strong>AI情绪成长教练网站</strong>
-        </a>
-        <a class="link-card" href="#">
-          <span>原型设计链接</span>
-          <strong>Figma / 原型文件</strong>
-        </a>
-        <a class="link-card" href="#">
-          <span>用户调研报告</span>
-          <strong>问卷与需求洞察</strong>
-        </a>
-        <a class="link-card" href="#">
-          <span>竞品分析文档</span>
-          <strong>市场与竞品研究</strong>
-        </a>
-        <a class="link-card" href="#">
-          <span>PDF简历下载</span>
-          <strong>个人简历附件</strong>
-        </a>
-      </div>
-    </section>
-
-    <!-- 技能与工具：可按求职岗位继续增删技能标签 -->
-    <section id="skills" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Skills</p>
-        <h2>技能与工具</h2>
-        <p>围绕产品工作流展示能力，突出调研、分析、方案和原型表达。</p>
-      </div>
-      <div class="skills-grid">
-        <article class="skill-group">
-          <h3>产品能力</h3>
-          <div class="skill-tags">
-            <span>用户调研</span>
-            <span>竞品分析</span>
-            <span>产品方案设计</span>
-            <span>用户需求分析</span>
-            <span>原型设计</span>
-          </div>
-        </article>
-        <article class="skill-group">
-          <h3>工具能力</h3>
-          <div class="skill-tags">
-            <span>Figma</span>
-            <span>XMind</span>
-            <span>ProcessOn</span>
-            <span>ChatGPT</span>
-            <span>Codex</span>
-            <span>HTML / CSS / JavaScript（基础）</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 联系方式：替换邮箱、微信、GitHub 和简历下载链接 -->
-    <section id="contact" class="section contact-section">
-      <div class="contact-card">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>联系方式</h2>
-          <p>如果我的项目经历和产品方向与岗位匹配，欢迎通过以下方式联系我。</p>
-        </div>
-        <div class="contact-info">
-          <p><span>邮箱</span><a href="mailto:2948408582@qq.com">2948408582@qq.com</a></p>
+        <div class="contact-list">
+          <p><span>邮箱</span><strong>2948408582@qq.com</strong></p>
           <p><span>微信</span><strong>ccc08042ccc</strong></p>
-          <p><span>GitHub作品链接</span><a href="https://0i0icci.github.io/coach/" target="_blank" rel="noopener">https://0i0icci.github.io/coach/</a></p>
+          <p><span>电话</span><strong>17723088201</strong></p>
         </div>
-        <a class="btn btn-primary" href="#">下载简历</a>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="assets/downloads/李佳浩-产品经理.pdf" download>简历下载</a>
+        </div>
       </div>
+      <button class="page-prev water-next" type="button" data-next="5" aria-label="返回上一页">↑</button>
+      <button class="page-next water-next" type="button" data-next="0" aria-label="回到种子">↓</button>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 李佳浩 · 产品经理 / AI产品方向作品集</p>
-  </footer>
+  <!-- 截图放大查看器：点击截图打开，按 Esc 或点击背景关闭 -->
+  <div class="image-lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="关闭截图预览">×</button>
+    <img src="" alt="">
+  </div>
 
   <script src="script.js"></script>
 </body>
